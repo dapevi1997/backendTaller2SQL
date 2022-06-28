@@ -19,3 +19,6 @@ ENGINE = InnoDB;
 
 alter table contact
     add deleted boolean default 0 null;
+
+insert into contact( con_name, con_number, con_email, con_birthday, deleted)
+values ('Daniel Pérez','3215915567','dapevi97@gmail.com','1997-07-04',0);
