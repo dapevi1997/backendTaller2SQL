@@ -34,9 +34,10 @@ public class ContactController {
 
     /**
      * API POST que permite crear un contacto.
-     * @param contact
-     * @return
+     * @param contact Información de un contacto contenida en el objeto.
+     * @return Contacto y respuesta de creado.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PostMapping(path = "/contact")
     public ResponseEntity<Contact> toCreate(Contact contact) {
         log.info(String.valueOf(contact));
@@ -46,8 +47,9 @@ public class ContactController {
 
     /**
      * API GET para obtener la lista de contactos guardados.
-     * @return
+     * @return Array de contactos.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping(path = "/contacts")
     public List<Contact> list() {
 
@@ -56,8 +58,8 @@ public class ContactController {
 
     /**
      * API GET para obtener un contacto por el id.
-     * @param id
-     * @return
+     * @param id Id del contacto a encontrar.
+     * @return Contacto encontrado.
      */
     @GetMapping(path = "/contact/{id}")
     public Optional<Contact> toFind( @PathVariable("id") Long id) {
@@ -66,10 +68,11 @@ public class ContactController {
 
     /**
      * API PUT para actualizar el contacto en todos sus campos.
-     * @param contact
-     * @param id
-     * @return
+     * @param contact Contacto a actualizar.
+     * @param id Id del contacto a actualizar.
+     * @return Contacto actualizado
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PutMapping(path = "/contact/{id}")
     public ResponseEntity<Contact> toUpdate(Contact contact, @PathVariable("id") Long id) {
         contactService.update(id,contact);
@@ -78,10 +81,11 @@ public class ContactController {
 
     /**
      * API PATCH para actualizar el nombre del contacto.
-     * @param contact
-     * @param id
-     * @return
+     * @param contact Contacto al que se le va a actualizar el nombre.
+     * @param id Id del contacto al que se le va a actualizar el nombre.
+     * @return Contacto con el nombre actualizado.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/contact/name/{id}")
     public ResponseEntity<Contact> toUpdateName(Contact contact, @PathVariable("id") Long id) {
         contactService.updateName(id,contact);
@@ -90,10 +94,11 @@ public class ContactController {
     }
     /**
      * API PATCH para actualizar el número del contacto.
-     * @param contact
-     * @param id
-     * @return
+     * @param contact Contacto al que se le va a actualizar el número.
+     * @param id Id del contacto al que se le va a actualizar el número.
+     * @return Contacto con el número actualizado.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/contact/number/{id}")
     public ResponseEntity<Contact> toUpdateNumber(Contact contact, @PathVariable("id") Long id) {
         contactService.updateNumber(id,contact);
@@ -101,11 +106,12 @@ public class ContactController {
 
     }
     /**
-     * API PATCH para actualizar el correo electrónico del contacto.
-     * @param contact
-     * @param id
-     * @return
+     * API PATCH para actualizar el email del contacto.
+     * @param contact Contacto al que se le va a actualizar el email.
+     * @param id Id del contacto al que se le va a actualizar el email.
+     * @return Contacto con el email actualizado.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/contact/email/{id}")
     public ResponseEntity<Contact> toUpdateEmail(Contact contact, @PathVariable("id") Long id) {
         contactService.updateEmail(id,contact);
@@ -113,11 +119,12 @@ public class ContactController {
 
     }
     /**
-     * API PATCH para actualizar la fecha de nacimiento del contacto.
-     * @param contact
-     * @param id
-     * @return
+     * API PATCH para actualizar la fechad de nacimiento del contacto.
+     * @param contact Contacto al que se le va a actualizar la fecha de nacimiento.
+     * @param id Id del contacto al que se le va a actualizar la fecha de nacimiento.
+     * @return Contacto con la fecha de nacimiento actualizada.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PatchMapping(path = "/contact/birthday/{id}")
     public ResponseEntity<Contact> toUpdateBirthday(Contact contact, @PathVariable("id") Long id) {
         contactService.updateBirthday(id,contact);
@@ -126,9 +133,9 @@ public class ContactController {
     }
     /**
      * API PATCH para hacer el borrado lógico del contacto.
-     * @param contact
-     * @param id
-     * @return
+     * @param contact Contacto que se va a borrar.
+     * @param id Id del contacto a borrar.
+     * @return Contacto borrado.
      */
     @PatchMapping(path = "/contact/deleted/{id}")
     public ResponseEntity<Contact> toUpdateDeleted(Contact contact, @PathVariable("id") Long id) {
@@ -139,9 +146,10 @@ public class ContactController {
 
     /**
      * API DELETE para eliminar un contacto por el id.
-     * @param contact
-     * @return
+     * @param contact Contacto a eliminar.
+     * @return Contacto eliminado.
      */
+    @CrossOrigin(origins = "http://localhost:3000/")
     @DeleteMapping(path = "/contact/{id}")
     public ResponseEntity<Contact> toDelete(Contact contact) {
         contactService.delete(contact);

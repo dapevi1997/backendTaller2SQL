@@ -29,7 +29,7 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para listar los contactos guardados.
-     * @return
+     * @return Lista de contactos.
      */
     @Override
     @Transactional(readOnly = true)
@@ -39,8 +39,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para guardar un contacto.
-     * @param contact
-     * @return
+     * @param contact Contacto a guardar.
+     * @return Contacto guardado.
      */
     @Override
     @Transactional
@@ -50,9 +50,9 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para actualizar completamente un contacto.
-     * @param id
-     * @param contact
-     * @return
+     * @param id Id del contacto.
+     * @param contact Contacto.
+     * @return Contacto actualizado.
      */
     @Override
     @Transactional
@@ -63,8 +63,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para actualizar el nombre de un contacto.
-     * @param id
-     * @param contact
+     * @param id Id del contacto.
+     * @param contact Contacto con el nombre actualizado.
      */
     @Transactional
     public void updateName(Long id, Contact contact){
@@ -74,8 +74,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para actualizar el número de un contacto.
-     * @param id
-     * @param contact
+     * @param id Id del contacto.
+     * @param contact Contacto con el número actualizado.
      */
     @Transactional
     public void updateNumber(Long id, Contact contact){
@@ -85,8 +85,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para actualizar el correo electrónico de un contacto.
-     * @param id
-     * @param contact
+     * @param id Id del contacto.
+     * @param contact Contacto con el correo actualizado.
      */
     @Transactional
     public void updateEmail(Long id, Contact contact){
@@ -96,8 +96,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para actualizar la fecha de nacimiciento de un contacto.
-     * @param id
-     * @param contact
+     * @param id Id del contacto.
+     * @param contact Contacto con la fecha de nacimiento actualizada.
      */
     @Transactional
     public void updateBirthday(Long id, Contact contact){
@@ -107,8 +107,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para hacer el borrado lógico de un contacto.
-     * @param id
-     * @param contact
+     * @param id Id del contacto.
+     * @param contact Contacto al que se le hará el borrado lógico.
      */
     @Transactional
     public void updateDeleted(Long id, Contact contact){
@@ -118,7 +118,7 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para eliminar a un contacto.
-     * @param contact
+     * @param contact Contacto a eliminar.
      */
     @Override
     @Transactional
@@ -129,8 +129,8 @@ public class ContactService implements IContactService{
 
     /**
      * Servicio para encontrar a un contacto por el id.
-     * @param id
-     * @return
+     * @param id Id del contacto.
+     * @return Contacto encontrado.
      */
     @Override
     @Transactional(readOnly = true)

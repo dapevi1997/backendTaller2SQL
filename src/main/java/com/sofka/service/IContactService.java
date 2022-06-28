@@ -18,35 +18,35 @@ import java.util.Optional;
 public interface IContactService {
     /**
      * Método para listar los contactos guardados.
-     * @return
+     * @return Lista de contactos.
      */
     List<Contact> list();
 
     /**
      * Método para guardar un contacto.
-     * @param contact
-     * @return
+     * @param contact Contacto a guardar.
+     * @return Contacto guardado.
      */
     Contact save(Contact contact);
 
     /**
      * Método para actualizar un contacto.
-     * @param id
-     * @param contact
-     * @return
+     * @param id Id del contacto a actualizar.
+     * @param contact Contacto a actualizar.
+     * @return Contacto actualizado.
      */
     Contact update(Long id, Contact contact);
 
     /**
      * Método para eliminar un contacto.
-     * @param contact
+     * @param contact Contacto a eliminar.
      */
     void delete(Contact contact);
 
     /**
      * Método para encontrar un contacto.
-     * @param id
-     * @return
+     * @param id Id del contacto.
+     * @return Contacto encontrado.
      */
     Optional<Contact> findUser(Long id);
 }

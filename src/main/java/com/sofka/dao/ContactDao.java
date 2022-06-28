@@ -19,8 +19,8 @@ import org.springframework.data.repository.query.Param;
 public interface ContactDao extends CrudRepository<Contact,Long> {
     /**
      * Consulta para modificar el nombre del contacto.
-     * @param id
-     * @param name
+     * @param id Id del contacto al que se le modificará el nombre.
+     * @param name Nuevo nombre.
      */
     @Modifying
     @Query("update Contact con set con.name = :name where con.id=:id")
@@ -28,8 +28,8 @@ public interface ContactDao extends CrudRepository<Contact,Long> {
 
     /**
      * Consulta para modificar el número de contacto.
-     * @param id
-     * @param number
+     * @param id Id del contacto al que se le modificará el número.
+     * @param number Nuevo número
      */
     @Modifying
     @Query("update Contact con set con.number = :number where con.id=:id")
@@ -37,8 +37,8 @@ public interface ContactDao extends CrudRepository<Contact,Long> {
 
     /**
      * Consulta para modificar el correo electrónico del contacto.
-     * @param id
-     * @param email
+     * @param id Id del contacto al que se le modificará el email.
+     * @param email Nuevo email.
      */
     @Modifying
     @Query("update Contact con set con.email = :email where con.id=:id")
@@ -46,8 +46,8 @@ public interface ContactDao extends CrudRepository<Contact,Long> {
 
     /**
      * Consulta para modificar la fecha de nacimiento del contacto.
-     * @param id
-     * @param birthday
+     * @param id Id del contacto al que se le modificará la fecha de nacimiento.
+     * @param birthday Nueva fecha.
      */
     @Modifying
     @Query("update Contact con set con.birthday = :birthday where con.id=:id")
@@ -55,8 +55,8 @@ public interface ContactDao extends CrudRepository<Contact,Long> {
 
     /**
      * Consulta para modificar el campo que indica que se hizo un borrado lógico al contacto.
-     * @param id
-     * @param deleted
+     * @param id Del contacto al que se le hará el borrado lógico.
+     * @param deleted Boleano para indicar el borrado lógico.
      */
     @Modifying
     @Query("update Contact con set con.deleted = :deleted where con.id=:id")
